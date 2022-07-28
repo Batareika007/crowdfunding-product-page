@@ -1,0 +1,78 @@
+@import 'colors';
+
+
+/** ============== global style ================ */
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+img {
+    border-style: none;
+    object-fit: cover;
+    max-width: 100%;
+}
+
+/* hide scroll bar if needed */
+
+.hide-scroll {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+
+    /* Firefox */
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* remove 'X' from input box to clear the text*/
+
+input::-ms-clear {
+    display: none;
+}
+
+
+/* remove link underline */
+a,
+a:hover,
+a:focus,
+a:active {
+    text-decoration: none;
+}
+
+/* remove arrow from select */
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    /* text-indent: 1px; */
+    /* text-overflow: ''; */
+}
+
+// remove blue highlighting 
+::selection {
+    color: none;
+    // background: rgba(0, 0, 255, 0.1);
+}
+
+
+/** ============ start  custom style ============ */
+
+
+.container {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
