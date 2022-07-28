@@ -1,0 +1,6 @@
+@media screen and (max-width: 768px) {
+  .container {
+    max-width: calc(1440px + 6.5%);
+    padding: 0 6.5%;
+  }
+}

@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap");
+/** ============== global style ================ */
+*,
+*::after,
+*::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+img {
+  border-style: none;
+  -o-object-fit: cover;
+     object-fit: cover;
+  max-width: 100%;
+}
+
+/* hide scroll bar if needed */
+.hide-scroll {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+.hide-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.flex-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+/* remove 'X' from input box to clear the text*/
+input::-ms-clear {
+  display: none;
+}
+
+/* remove link underline */
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+}
+
+/* remove arrow from select */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  /* text-indent: 1px; */
+  /* text-overflow: ''; */
+}
+
+::-moz-selection {
+  color: none;
+}
+
+::selection {
+  color: none;
+}
+
+/** ============ start  custom style ============ */
+.container {
+  max-width: calc(1440px + 22%);
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 11%;
+}
+
+body {
+  font-size: 16px;
+  font-family: "Commissioner", sans-serif;
+}
+
+/* media query */
+@media screen and (max-width: 768px) {
+  .container {
+    max-width: calc(1440px + 6.5%);
+    padding: 0 6.5%;
+  }
+}

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap');
 @import 'colors';
 
 
@@ -71,8 +72,20 @@ select {
 
 
 .container {
-    max-width: 1440px;
+    max-width: calc(1440px + 22%);
     width: 100%;
     margin: 0 auto;
-    padding: 0 1.5rem;
+    padding: 0 11%;
 }
+
+body {
+    font-size: 16px;
+    font-family: 'Commissioner',
+        sans-serif;
+}
+
+
+
+
+/* media query */
+@import 'mediaQuery';
