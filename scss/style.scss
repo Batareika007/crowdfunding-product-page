@@ -51,6 +51,7 @@ a:hover,
 a:focus,
 a:active {
     text-decoration: none;
+    color: inherit;
 }
 
 /* remove arrow from select */
@@ -67,9 +68,55 @@ select {
     // background: rgba(0, 0, 255, 0.1);
 }
 
+ul {
+    list-style: none;
+}
+
+button {
+    cursor: pointer;
+    font-weight: 700;
+}
 
 /** ============ start  custom style ============ */
 
+// make all document dark bg -- add class to body
+.dark-bg {
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+}
+
+.cyan-btn {
+    color: white;
+    background-color: $cyanLight;
+    cursor: pointer;
+    width: 204px;
+    min-width: 160px;
+    height: 56px;
+    border-radius: 56px;
+    font-weight: 700;
+
+    &:hover {
+        background-color: $cyanDark;
+    }
+}
+
+.heading {
+    font-weight: 700;
+    color: $headingColor;
+}
+
+.text {
+    color: $textColor;
+}
 
 .container {
     max-width: calc(1440px + 22%);
@@ -82,10 +129,201 @@ body {
     font-size: 16px;
     font-family: 'Commissioner',
         sans-serif;
+    background-color: $bodyBg;
+}
+
+.header {
+    background-image: url(../images/image-hero-desktop.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    color: white;
+    max-height: 400px;
+    height: 70vw;
+
+    &__nav {
+        padding: 48px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nav {
+        &__inner {
+            display: flex;
+            gap: 33px
+        }
+
+        &__hamburger-btn {
+            display: none;
+        }
+    }
 }
 
 
+.main {
+    position: relative;
+    top: -90px;
 
+    .main__inner {
+        max-width: 730px;
+        margin: 0 auto;
+    }
+}
+
+.block {
+    &:not(:last-child) {
+        margin-bottom: 1rem;
+    }
+
+    &__inner {
+        position: relative;
+        border-radius: 8px;
+        padding: 48px;
+        background-color: white;
+
+        &_text {
+            line-height: 150%;
+            margin-bottom: 2rem;
+        }
+
+        &_heading {
+            line-height: 150%;
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__logo {
+        text-align: center;
+        position: absolute;
+        top: -25px;
+        left: 0;
+        width: 100%;
+
+    }
+
+    .top-section {
+
+        &__heading,
+        &__text {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+    }
+
+
+    &__buttons {
+        display: flex;
+        justify-content: space-between;
+        gap: 8px;
+
+        .bookmark-btn {
+            background-image: url(../images/icon-bookmark.svg);
+            background-position: left;
+            background-repeat: no-repeat;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            color: $textColor;
+            font-weight: 700;
+            border-radius: 48px;
+            padding: 0 2rem 0 0;
+            min-width: 56px;
+            width: 166px;
+            justify-content: flex-end;
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+}
+
+
+.numbers {
+    display: flex;
+    margin-bottom: 2rem;
+
+    &__item {
+
+        padding: 0 50px;
+
+        &:first-child {
+            padding-left: 0;
+        }
+
+        &:nth-child(2) {
+            border-left: 1px solid $bodyBg;
+            border-right: 1px solid $bodyBg;
+        }
+
+        &_head {
+            font-size: 2rem;
+            margin-bottom: 0.5rem
+        }
+    }
+
+    &__range {
+        width: 100%;
+        height: 12px;
+        background-color: $bodyBg;
+        border-radius: 12px;
+        overflow: hidden;
+
+        &_postition {
+            height: 100%;
+            // chage width via js
+            width: 89%;
+            background-color: $cyanLight;
+            border-radius: inherit
+        }
+    }
+}
+
+.card {
+    border-radius: 16px;
+    border: 1px solid $bodyBg;
+    margin-bottom: 2rem;
+
+    &__inner {
+        padding: 2rem;
+    }
+
+    &__top,
+    &__bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &_number {
+            display: flex;
+            align-items: center;
+
+            .heading {
+                margin-right: 0.5rem;
+                font-size: 2rem;
+            }
+        }
+
+        &_price {
+            color: $cyanLight;
+            font-weight: 700;
+        }
+    }
+
+    &__top,
+    &__text {
+        margin-bottom: 2rem;
+        line-height: 150%
+    }
+
+    &__text {
+        font-weight: 500;
+    }
+
+
+
+}
 
 /* media query */
 @import 'mediaQuery';
