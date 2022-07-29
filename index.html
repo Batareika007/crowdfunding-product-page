@@ -40,7 +40,7 @@
         </ul>
 
         <div class="nav__hamburger-btn active">
-          <img class="nav__hamburger-btn_open" src="images/icon-hamburger.svg" alt="menu open">
+          <img class="nav__hamburger-btn_open active" src="images/icon-hamburger.svg" alt="menu open">
           <img class="nav__hamburger-btn_close" src="images/icon-close-menu.svg" alt="close open">
         </div>
       </nav>
@@ -68,10 +68,16 @@
 
             <div class="block__buttons">
               <button class="cyan-btn">Back this project</button>
-              <!-- <button class="bookmark-btn"> <img src="images/icon-bookmark.svg" alt="Bookmark"> Bookmark</button> -->
-              <button class="bookmark-btn">
+
+              <a class="bookmark-btn" id="bookmark">
+                <svg width="56" height="56" xmlns="http://www.w3.org/2000/svg">
+                  <g fill="none" fill-rule="evenodd">
+                    <circle fill="#2F2F2F" cx="28" cy="28" r="28" />
+                    <path fill="#B1B1B1" d="M23 19v18l5-5.058L33 37V19z" />
+                  </g>
+                </svg>
                 <span>Bookmark</span>
-              </button>
+              </a>
             </div>
           </div>
         </section>
@@ -200,7 +206,23 @@
             </section>
           </div>
         </article>
+        <!-- popap -->
 
+        <div id="popup" class="popup block__inner">
+          <div class="popup__inner">
+
+            <img class="popup__img" src="images/icon-check.svg" alt="check icon">
+
+            <h2 class="block__inner_heading heading"> Thanks for your support! </h2>
+            <p class="block__inner_text text">
+              Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser worldwide. You will
+              get
+              an email once our campaign is completed.
+            </p>
+            <button class="popup__btn cyan-btn" id="popup-btn"> Got it! </button>
+          </div>
+
+        </div>
       </div>
   </main>
 
@@ -279,22 +301,11 @@
   <!-- Selection modal end -->
 
   <!-- Success modal start -->
-  <!--  
-  <div class="popup">
-    <div class="popup__inner">
-      <img src="images/icon-check.svg" alt="check icon">
 
-      <h2 class="popup__heading"> Thanks for your support! </h2>
-      <p class="popup__text">
-        Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser worldwide. You will get
-        an email once our campaign is completed.
-      </p>
-      <button class="popup__btn"> Got it! </button>
-    </div>
 
-    
-  </div>
-  -->
+
+
+
   <!-- Success modal end -->
   <footer>
     <div class="attribution">
@@ -302,6 +313,7 @@
       Coded by <a href="https://www.frontendmentor.io/profile/Batareika007" target="_blank">Alexei</a>.
     </div>
   </footer>
+  <script src="js/hamburgerNavMenu.js"></script>
 </body>
 
 </html>

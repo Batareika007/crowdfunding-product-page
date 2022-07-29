@@ -130,9 +130,11 @@ body {
     font-family: 'Commissioner',
         sans-serif;
     background-color: $bodyBg;
+    z-index: 0;
 }
 
 .header {
+    position: relative;
     background-image: url(../images/image-hero-desktop.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -141,20 +143,25 @@ body {
     max-height: 400px;
     height: 70vw;
 
+
     &__nav {
+        position: relative;
         padding: 48px 0;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        z-index: 20;
     }
 
     .nav {
+
         &__inner {
             display: flex;
-            gap: 33px
+            gap: 33px;
         }
 
         &__hamburger-btn {
+            cursor: pointer;
             display: none;
         }
     }
@@ -218,19 +225,44 @@ body {
         gap: 8px;
 
         .bookmark-btn {
-            background-image: url(../images/icon-bookmark.svg);
-            background-position: left;
-            background-repeat: no-repeat;
-            overflow: hidden;
             display: flex;
             align-items: center;
             color: $textColor;
             font-weight: 700;
             border-radius: 48px;
-            padding: 0 2rem 0 0;
             min-width: 56px;
             width: 166px;
-            justify-content: flex-end;
+            gap: 8px;
+            background-color: $bodyBg;
+            cursor: pointer;
+            width: max-content;
+            padding-right: 1rem;
+
+            span {
+                flex: 1 0 auto;
+            }
+
+            svg {
+                flex: 0 0 auto;
+            }
+
+
+            &.active {
+                color: $cyanDark;
+                font-weight: 700;
+
+
+                svg {
+
+                    circle {
+                        fill: $cyanDark;
+                    }
+
+                    path {
+                        fill: white;
+                    }
+                }
+            }
 
             &:hover {
                 opacity: 0.8;
@@ -323,6 +355,38 @@ body {
 
 
 
+}
+
+.popup {
+    z-index: 10;
+    position: absolute;
+    width: 100%;
+    top: -5%;
+    left: 0;
+    display: none;
+
+    &__inner {
+        border-radius: 16px;
+        background-color: white;
+        margin: 0 auto;
+        max-width: 550px;
+        text-align: center;
+        padding: 2rem;
+    }
+
+    &__img {
+        height: 100px;
+        margin-bottom: 2rem;
+    }
+
+    &__btn {
+        font-size: 1.2rem
+    }
+
+    &.active {
+        display: block;
+        background-color: transparent;
+    }
 }
 
 /* media query */

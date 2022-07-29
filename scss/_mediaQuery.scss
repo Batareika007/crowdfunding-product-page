@@ -15,21 +15,24 @@
 
         .nav {
             &__inner {
-                display: flex;
-                position: absolute;
-                flex-direction: column;
-                top: 5rem;
-                background-color: white;
-                color: $headingColor;
-                font-weight: 700;
-                width: 90%;
-                left: 5%;
-                text-align: left;
-                border-radius: 8px;
-                z-index: 10;
-                gap: 0;
-
                 display: none;
+
+                &.active {
+                    display: flex;
+                    position: absolute;
+                    flex-direction: column;
+                    top: 5rem;
+                    background-color: white;
+                    color: $headingColor;
+                    font-weight: 700;
+                    width: 90%;
+                    left: 5%;
+                    text-align: left;
+                    border-radius: 8px;
+                    z-index: 10;
+                    gap: 0;
+                }
+
 
                 &_item {
                     padding: 2rem 1rem;
@@ -45,8 +48,13 @@
             &__hamburger-btn {
                 display: unset;
 
+                &_open,
                 &_close {
                     display: none;
+
+                    &.active {
+                        display: unset;
+                    }
                 }
             }
         }
@@ -98,7 +106,7 @@
 
 }
 
-@media screen and (max-width:425px) {
+@media screen and (max-width:500px) {
     .bookmark-btn {
         max-width: 56px;
 

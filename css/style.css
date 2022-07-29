@@ -126,10 +126,12 @@ button {
 body {
   font-size: 16px;
   font-family: "Commissioner", sans-serif;
-  background-color: hsla(0deg, 0%, 48%, 0.2);
+  background-color: hsla(0deg, 0%, 48%, 0.1);
+  z-index: 0;
 }
 
 .header {
+  position: relative;
   background-image: url(../images/image-hero-desktop.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -139,6 +141,7 @@ body {
   height: 70vw;
 }
 .header__nav {
+  position: relative;
   padding: 48px 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -149,6 +152,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  z-index: 20;
 }
 .header .nav__inner {
   display: -webkit-box;
@@ -157,6 +161,7 @@ body {
   gap: 33px;
 }
 .header .nav__hamburger-btn {
+  cursor: pointer;
   display: none;
 }
 
@@ -207,10 +212,6 @@ body {
   gap: 8px;
 }
 .block__buttons .bookmark-btn {
-  background-image: url(../images/icon-bookmark.svg);
-  background-position: left;
-  background-repeat: no-repeat;
-  overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -220,12 +221,35 @@ body {
   color: hsl(0deg, 0%, 48%);
   font-weight: 700;
   border-radius: 48px;
-  padding: 0 2rem 0 0;
   min-width: 56px;
   width: 166px;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  gap: 8px;
+  background-color: hsla(0deg, 0%, 48%, 0.1);
+  cursor: pointer;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  padding-right: 1rem;
+}
+.block__buttons .bookmark-btn span {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+}
+.block__buttons .bookmark-btn svg {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+}
+.block__buttons .bookmark-btn.active {
+  color: hsl(176deg, 72%, 28%);
+  font-weight: 700;
+}
+.block__buttons .bookmark-btn.active svg circle {
+  fill: hsl(176deg, 72%, 28%);
+}
+.block__buttons .bookmark-btn.active svg path {
+  fill: white;
 }
 .block__buttons .bookmark-btn:hover {
   opacity: 0.8;
@@ -244,8 +268,8 @@ body {
   padding-left: 0;
 }
 .numbers__item:nth-child(2) {
-  border-left: 1px solid hsla(0deg, 0%, 48%, 0.2);
-  border-right: 1px solid hsla(0deg, 0%, 48%, 0.2);
+  border-left: 1px solid hsla(0deg, 0%, 48%, 0.1);
+  border-right: 1px solid hsla(0deg, 0%, 48%, 0.1);
 }
 .numbers__item_head {
   font-size: 2rem;
@@ -254,7 +278,7 @@ body {
 .numbers__range {
   width: 100%;
   height: 12px;
-  background-color: hsla(0deg, 0%, 48%, 0.2);
+  background-color: hsla(0deg, 0%, 48%, 0.1);
   border-radius: 12px;
   overflow: hidden;
 }
@@ -267,7 +291,7 @@ body {
 
 .card {
   border-radius: 16px;
-  border: 1px solid hsla(0deg, 0%, 48%, 0.2);
+  border: 1px solid hsla(0deg, 0%, 48%, 0.1);
   margin-bottom: 2rem;
 }
 .card__inner {
@@ -308,6 +332,34 @@ body {
   font-weight: 500;
 }
 
+.popup {
+  z-index: 10;
+  position: absolute;
+  width: 100%;
+  top: -5%;
+  left: 0;
+  display: none;
+}
+.popup__inner {
+  border-radius: 16px;
+  background-color: white;
+  margin: 0 auto;
+  max-width: 550px;
+  text-align: center;
+  padding: 2rem;
+}
+.popup__img {
+  height: 100px;
+  margin-bottom: 2rem;
+}
+.popup__btn {
+  font-size: 1.2rem;
+}
+.popup.active {
+  display: block;
+  background-color: transparent;
+}
+
 /* media query */
 @media screen and (max-width: 768px) {
   .container {
@@ -321,6 +373,9 @@ body {
     padding: 24px 0;
   }
   .header .nav__inner {
+    display: none;
+  }
+  .header .nav__inner.active {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -339,20 +394,22 @@ body {
     border-radius: 8px;
     z-index: 10;
     gap: 0;
-    display: none;
   }
   .header .nav__inner_item {
     padding: 2rem 1rem;
   }
   .header .nav__inner_item:nth-child(2) {
-    border-top: 1px solid hsla(0deg, 0%, 48%, 0.2);
-    border-bottom: 1px solid hsla(0deg, 0%, 48%, 0.2);
+    border-top: 1px solid hsla(0deg, 0%, 48%, 0.1);
+    border-bottom: 1px solid hsla(0deg, 0%, 48%, 0.1);
   }
   .header .nav__hamburger-btn {
     display: unset;
   }
-  .header .nav__hamburger-btn_close {
+  .header .nav__hamburger-btn_open, .header .nav__hamburger-btn_close {
     display: none;
+  }
+  .header .nav__hamburger-btn_open.active, .header .nav__hamburger-btn_close.active {
+    display: unset;
   }
   .main {
     top: -57px;
@@ -375,8 +432,8 @@ body {
     padding: 1.5rem 0;
     border-left: none;
     border-right: none;
-    border-top: 1px solid hsla(0deg, 0%, 48%, 0.2);
-    border-bottom: 1px solid hsla(0deg, 0%, 48%, 0.2);
+    border-top: 1px solid hsla(0deg, 0%, 48%, 0.1);
+    border-bottom: 1px solid hsla(0deg, 0%, 48%, 0.1);
   }
   .card__inner {
     padding: 2rem 1rem;
@@ -392,7 +449,7 @@ body {
     gap: 1rem;
   }
 }
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 500px) {
   .bookmark-btn {
     max-width: 56px;
   }
