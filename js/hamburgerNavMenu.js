@@ -32,6 +32,9 @@ hamburgerMenu.addEventListener("click", () => {
 const bookmark = document.querySelector('#bookmark');
 
 bookmark.addEventListener('click', (e) => {
+    if (document.querySelector('#bookmark span').textContent === "Bookmarked") {
+        return
+    }
     document.querySelector('#bookmark span').textContent = "Bookmarked";
     bookmark.classList.add('active');
     alert('press "ctrl" + "D" for bookamr the page');
