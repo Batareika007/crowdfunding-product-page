@@ -357,6 +357,96 @@ body {
 
 }
 
+.modal {
+    &__close {
+        text-align: right;
+    }
+
+    &__form {
+        label {
+            cursor: pointer;
+
+            h3:hover {
+                color: $cyanLight;
+            }
+
+        }
+
+        .card__top {
+            justify-content: flex-start;
+
+            input {
+                margin-right: 1rem;
+
+                &: {
+                    label h3 {
+                        color: $cyanLight;
+                    }
+                }
+            }
+
+            &_price {
+                margin-left: 1rem;
+            }
+
+            &_text {
+                margin-left: auto;
+            }
+        }
+    }
+
+    &__card {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        height: 56px;
+
+        &_input {
+            position: relative;
+            width: 100px;
+            margin-right: 1rem;
+
+            input {
+                border-radius: 100px;
+                width: inherit;
+                cursor: pointer;
+                border: 1px solid $textColor;
+                padding: 1rem;
+
+                color: black;
+                font-weight: 700;
+                padding-left: 30px;
+
+                &:focus {
+                    border-color: $cyanLight;
+                    outline: none;
+                    caret-color: $cyanLight;
+                }
+            }
+
+            &::before {
+                position: absolute;
+                content: '$';
+                left: 15px;
+                top: 0;
+                color: $textColor;
+            }
+
+        }
+
+
+        &_submit {
+            color: white;
+            background-color: $cyanLight;
+            width: 100px;
+            padding: 1rem 0;
+            border-radius: 56px;
+        }
+    }
+
+}
+
 .popup {
     z-index: 10;
     position: absolute;
