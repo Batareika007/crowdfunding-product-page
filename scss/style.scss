@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap');
-
-
+@import "colors";
 
 /** ============== global style ================ */
 *,
@@ -93,6 +92,7 @@ body {
     padding: 0 5%;
 }
 
+
 .header {
     position: relative;
     background: url(../images/image-hero-desktop.jpg);
@@ -162,8 +162,9 @@ body {
     }
 
     &__text {
-        color: hsl(0, 0%, 48%);
         margin-bottom: 2rem;
+        color: $textColor;
+        line-height: 180%;
     }
 
     &__bottom {
@@ -173,9 +174,13 @@ body {
 
     &__btn {
         color: white;
-        background-color: hsl(176, 50%, 47%);
+        background-color: $cyanLight;
         padding: 0 2.5rem;
         border-radius: 2rem;
+
+        &:hover {
+            background-color: $cyanDark;
+        }
     }
 
     &__btn2 {
@@ -205,6 +210,49 @@ body {
         border: 2px solid hsl(0, 0%, 90%);
         padding: 2rem;
         border-radius: 8px;
+
+        &:not(:last-child) {
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__spacer {
+        display: flex;
+        justify-content: space-between;
+        font-weight: 700;
+        align-items: center;
+
+        .block__btn {
+            min-height: 56px;
+        }
+    }
+
+    &__price {
+        color: $cyanLight;
+    }
+
+    &__disabled {
+        opacity: 0.5;
+        pointer-events: none;
+
+        .block__btn {
+            background-color: $textColor;
+        }
+    }
+}
+
+.count {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    &__number {
+        font-size: 2rem;
+    }
+
+    &__regular {
+        color: $textColor;
+        font-size: 90%;
     }
 }
 
