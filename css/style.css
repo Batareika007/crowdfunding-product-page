@@ -162,7 +162,7 @@ body {
 
 .block__header {
   font-weight: 700;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 .block__text {
   margin-bottom: 2rem;
@@ -226,9 +226,19 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   font-weight: 700;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+.block__spacer .block__header {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 60%;
+          flex: 1 0 60%;
+}
+.block__spacer .block__count {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 60%;
+          flex: 1 0 60%;
 }
 .block__spacer .block__btn {
   min-height: 56px;
@@ -285,4 +295,63 @@ body {
 }
 .number .block__text {
   margin-bottom: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    background: url(../images/image-hero-mobile.jpg);
+    background-position: center center;
+    background-size: cover;
+    min-height: 60vh;
+  }
+  .block__bottom {
+    gap: 0.5rem;
+  }
+  .number {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+  }
+  .number__item {
+    position: relative;
+    text-align: center;
+    padding-right: 0;
+  }
+  .number__item:not(:first-child) {
+    padding: 0;
+    border-left: initial;
+    margin-top: 0.5rem;
+  }
+  .number__item:not(:first-child)::before {
+    margin-bottom: 0.5rem;
+    position: relative;
+    content: "";
+    text-align: center;
+    display: inline-block;
+    top: 0;
+    left: 0;
+    height: 2px;
+    border-radius: 2px;
+    width: 40%;
+    background-color: hsl(0deg, 0%, 90%);
+  }
+}
+@media screen and (max-width: 425px) {
+  .main__item {
+    padding: 1rem;
+  }
+  .block__inner {
+    padding: 1rem;
+  }
+  .block__btn2 {
+    content: "";
+    overflow: hidden;
+    width: 56px;
+    padding: 0;
+  }
+  .block__count {
+    margin-bottom: 1rem;
+  }
 }

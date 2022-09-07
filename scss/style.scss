@@ -158,7 +158,7 @@ body {
 .block {
     &__header {
         font-weight: 700;
-        margin-bottom: 1.5rem;
+        margin-bottom: 0.5rem;
     }
 
     &__text {
@@ -220,7 +220,17 @@ body {
         display: flex;
         justify-content: space-between;
         font-weight: 700;
-        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 1rem;
+
+        .block__header {
+            flex: 1 0 60%;
+        }
+
+        .block__count {
+            flex: 1 0 60%;
+            // margin-bottom: 1rem;
+        }
 
         .block__btn {
             min-height: 56px;
@@ -286,3 +296,79 @@ body {
     }
 
 }
+
+
+// mobile 
+
+@media screen and (max-width:768px) {
+    .header {
+        background: url(../images/image-hero-mobile.jpg);
+        background-position: center center;
+        // background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 60vh;
+    }
+
+    .block__bottom {
+        gap: 0.5rem;
+    }
+
+    .number {
+        flex-direction: column;
+        width: 100%;
+
+        &__item {
+            position: relative;
+            text-align: center;
+            padding-right: 0;
+
+            &:not(:first-child) {
+                padding: 0;
+                border-left: initial;
+                margin-top: 0.5rem;
+
+                &::before {
+                    margin-bottom: 0.5rem;
+                    position: relative;
+                    content: '';
+                    text-align: center;
+                    display: inline-block;
+                    top: 0;
+                    left: 0;
+                    height: 2px;
+                    border-radius: 2px;
+                    width: 40%;
+                    background-color: hsl(0, 0%, 90%);
+                }
+            }
+
+        }
+    }
+}
+
+@media screen and (max-width:425px) {
+    .main__item {
+        padding: 1rem;
+    }
+
+
+
+    .block__inner {
+        padding: 1rem;
+    }
+
+    .block__btn2 {
+        content: '';
+        overflow: hidden;
+        width: 56px;
+        padding: 0;
+    }
+
+    .block__count {
+        margin-bottom: 1rem;
+    }
+}
+
+@media screen and (max-width:375px) {}
+
+@media screen and (max-width:320px) {}
