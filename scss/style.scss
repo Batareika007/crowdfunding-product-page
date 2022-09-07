@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap');
 @import "colors";
+@import "../node_modules/hamburgers/_sass/hamburgers/hamburgers";
 
 /** ============== global style ================ */
 *,
@@ -121,9 +122,10 @@ body {
     &__nav {
         display: flex;
         justify-content: space-between;
+        align-items: center;
     }
 
-    .nav__item:last-child {
+    .nav__item {
         display: flex;
         gap: 36px;
 
@@ -297,14 +299,65 @@ body {
 
 }
 
+.hamburger {
+    display: none;
+}
 
 // mobile 
 
 @media screen and (max-width:768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .header {
+        &__nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav__item {
+            gap: 0;
+        }
+
+        .nav-list {
+            transition: all 0.3s;
+            height: 0;
+            opacity: 0;
+            position: absolute;
+            overflow: hidden;
+            background-color: white;
+            color: $headingColor;
+            border-radius: 8px;
+            flex-direction: column;
+            top: 7rem;
+            left: 0;
+            width: 100%;
+            font-weight: 700;
+            font-size: 130%;
+            gap: 0;
+
+            .nav__item_link {
+                padding: 2rem;
+
+                &:not(:last-child) {
+                    border-bottom: 2px solid hsl(0deg, 0%, 90%);
+                }
+            }
+        }
+
+        .is-active {
+            height: auto;
+            opacity: 1;
+            transition: all 0.3s;
+        }
+    }
+
     .header {
         background: url(../images/image-hero-mobile.jpg);
         background-position: center center;
-        // background-repeat: no-repeat;
+        background-repeat: no-repeat;
         background-size: cover;
         min-height: 60vh;
     }
