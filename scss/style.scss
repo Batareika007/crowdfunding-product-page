@@ -191,6 +191,28 @@ body {
         border-radius: 2rem;
         gap: 1rem;
         padding: 0 1.5rem 0 0;
+
+        &:hover {
+            svg g circle {
+                fill: $textColor
+            }
+        }
+
+        &.active-btn {
+            font-weight: 700;
+            color: $cyanDark;
+
+            svg g {
+                circle {
+                    fill: $cyanDark;
+                }
+
+                path {
+                    fill: white;
+                }
+            }
+
+        }
     }
 
     &__range {
@@ -404,6 +426,9 @@ body {
         padding: 1rem;
     }
 
+    .main-top__logo {
+        top: -40px;
+    }
 
 
     .block__inner {
@@ -415,7 +440,10 @@ body {
         overflow: hidden;
         width: 56px;
         padding: 0;
+
     }
+
+
 
     .block__count {
         margin-bottom: 1rem;
