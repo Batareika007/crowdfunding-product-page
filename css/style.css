@@ -1624,10 +1624,12 @@ body {
     padding: 1rem;
   }
   .block__btn2 {
-    content: "";
     overflow: hidden;
-    width: 56px;
     padding: 0;
+    min-width: 56px;
+  }
+  .block__btn2 .button-text {
+    display: none;
   }
   .block__count {
     margin-bottom: 1rem;

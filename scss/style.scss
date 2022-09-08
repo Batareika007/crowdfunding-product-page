@@ -192,6 +192,7 @@ body {
         gap: 1rem;
         padding: 0 1.5rem 0 0;
 
+
         &:hover {
             svg g circle {
                 fill: $textColor
@@ -436,10 +437,14 @@ body {
     }
 
     .block__btn2 {
-        content: '';
+
         overflow: hidden;
-        width: 56px;
         padding: 0;
+        min-width: 56px;
+
+        .button-text {
+            display: none;
+        }
 
     }
 
