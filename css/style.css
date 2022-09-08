@@ -1279,6 +1279,7 @@ ul {
 }
 
 button {
+  outline: none;
   cursor: pointer;
   font-weight: 700;
 }
