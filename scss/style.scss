@@ -377,6 +377,7 @@ body {
             padding: 0 10px 0 30px;
             font-weight: 700;
             font-size: 1rem;
+            margin-right: 1rem;
 
             &:hover {
                 border: $cyanDark solid 1px;
@@ -389,7 +390,6 @@ body {
         }
 
         label {
-            // color: hsl(0deg, 0%, 90%);
             position: relative;
             left: 30px;
         }

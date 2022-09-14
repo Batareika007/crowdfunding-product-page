@@ -1562,6 +1562,7 @@ body {
   padding: 0 10px 0 30px;
   font-weight: 700;
   font-size: 1rem;
+  margin-right: 1rem;
 }
 .modal form .input-number:hover {
   border: hsl(176deg, 72%, 28%) solid 1px;
