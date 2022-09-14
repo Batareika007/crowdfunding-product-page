@@ -1274,6 +1274,16 @@ select {
   color: none;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 ul {
   list-style: none;
 }
@@ -1522,6 +1532,49 @@ body {
   display: none;
 }
 
+.modal .block__header:hover {
+  color: hsl(176deg, 50%, 47%);
+  cursor: pointer;
+}
+.modal .block__header span:first-child {
+  margin-right: 2rem;
+}
+.modal .block__text {
+  margin-bottom: 0;
+}
+.modal .block__spacer {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.modal .block__btn {
+  padding: 0 1.5rem;
+}
+.modal form {
+  position: relative;
+}
+.modal form .input-number {
+  outline: none;
+  border: hsl(0deg, 0%, 90%) solid 1px;
+  height: 56px;
+  border-radius: 56px;
+  width: 105px;
+  padding: 0 10px 0 30px;
+  font-weight: 700;
+  font-size: 1rem;
+}
+.modal form .input-number:hover {
+  border: hsl(176deg, 72%, 28%) solid 1px;
+  cursor: pointer;
+}
+.modal form .input-number:focus {
+  border: hsl(176deg, 72%, 28%) solid 1px;
+}
+.modal form label {
+  position: relative;
+  left: 30px;
+}
+
 @media screen and (max-width: 768px) {
   .hamburger {
     display: block;
@@ -1614,6 +1667,11 @@ body {
     background-color: hsl(0deg, 0%, 90%);
   }
 }
+@media screen and (max-width: 630px) {
+  .block__count {
+    margin-bottom: 1rem;
+  }
+}
 @media screen and (max-width: 425px) {
   .main__item {
     padding: 1rem;
@@ -1631,8 +1689,5 @@ body {
   }
   .block__btn2 .button-text {
     display: none;
-  }
-  .block__count {
-    margin-bottom: 1rem;
   }
 }

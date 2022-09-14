@@ -68,6 +68,17 @@ select {
     // background: rgba(0, 0, 255, 0.1);
 }
 
+// remove input number arrow 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
 ul {
     list-style: none;
 }
@@ -327,6 +338,65 @@ body {
     display: none;
 }
 
+.modal {
+    .block {
+        &__header {
+            &:hover {
+                color: $cyanLight;
+                cursor: pointer;
+            }
+
+            span:first-child {
+                margin-right: 2rem;
+            }
+        }
+
+        &__text {
+            margin-bottom: 0;
+        }
+
+        &__spacer {
+            align-items: center;
+        }
+
+        &__btn {
+            padding: 0 1.5rem;
+        }
+
+    }
+
+    form {
+        position: relative;
+
+        .input-number {
+            outline: none;
+            border: hsl(0deg, 0%, 90%) solid 1px;
+            height: 56px;
+            border-radius: 56px;
+            width: 105px;
+            padding: 0 10px 0 30px;
+            font-weight: 700;
+            font-size: 1rem;
+
+            &:hover {
+                border: $cyanDark solid 1px;
+                cursor: pointer;
+            }
+
+            &:focus {
+                border: $cyanDark solid 1px;
+            }
+        }
+
+        label {
+            // color: hsl(0deg, 0%, 90%);
+            position: relative;
+            left: 30px;
+        }
+    }
+
+}
+
 // mobile 
 
 @media screen and (max-width:768px) {
@@ -423,6 +493,12 @@ body {
     }
 }
 
+@media screen and (max-width: 630px) {
+    .block__count {
+        margin-bottom: 1rem;
+    }
+}
+
 @media screen and (max-width:425px) {
     .main__item {
         padding: 1rem;
@@ -447,12 +523,6 @@ body {
             display: none;
         }
 
-    }
-
-
-
-    .block__count {
-        margin-bottom: 1rem;
     }
 }
 
