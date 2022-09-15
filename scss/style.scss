@@ -339,6 +339,37 @@ body {
 }
 
 .modal {
+
+    &__radio {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        border: $textColor solid 1px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+
+
+    &__inner {
+        display: flex;
+        gap: 2rem;
+        align-items: baseline;
+
+        .modal__radio {
+            flex: 0 0 auto;
+
+            .modal-rad {
+                width: 50%;
+                height: 50%;
+                border-radius: 50%;
+            }
+        }
+    }
+
     .block {
         &__header {
             &:hover {
@@ -393,6 +424,16 @@ body {
             position: relative;
             left: 30px;
         }
+    }
+
+}
+
+
+.modal-active {
+    border-color: $cyanLight;
+
+    .modal-rad {
+        background-color: $cyanLight;
     }
 
 }

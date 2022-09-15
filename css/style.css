@@ -1532,6 +1532,42 @@ body {
   display: none;
 }
 
+.modal__radio {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: hsl(0deg, 0%, 48%) solid 1px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+.modal__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2rem;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+.modal__inner .modal__radio {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+}
+.modal__inner .modal__radio .modal-rad {
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+}
 .modal .block__header:hover {
   color: hsl(176deg, 50%, 47%);
   cursor: pointer;
@@ -1574,6 +1610,13 @@ body {
 .modal form label {
   position: relative;
   left: 30px;
+}
+
+.modal-active {
+  border-color: hsl(176deg, 50%, 47%);
+}
+.modal-active .modal-rad {
+  background-color: hsl(176deg, 50%, 47%);
 }
 
 @media screen and (max-width: 768px) {
