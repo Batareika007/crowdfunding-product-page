@@ -1296,10 +1296,21 @@ button {
 
 /** ============ start  custom style ============ */
 body {
+  position: relative;
   font-family: "Commissioner", sans-serif;
   font-weight: 400;
   font-size: 100%;
   background-color: hsl(0deg, 0%, 95%);
+}
+body.active::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 20;
 }
 
 .container {
@@ -1532,6 +1543,33 @@ body {
   display: none;
 }
 
+.modal {
+  display: none;
+}
+.modal.active {
+  margin: 0 5%;
+  z-index: 30;
+  position: absolute;
+  top: -20vh;
+  left: 0;
+  display: initial;
+}
+.modal__close {
+  text-align: right;
+}
+.modal__close img {
+  cursor: pointer;
+}
+.modal__close:hover {
+  opacity: 0.7;
+}
+.modal__header {
+  margin-bottom: 1rem;
+}
+.modal__subheader {
+  color: hsl(0deg, 0%, 48%);
+  margin-bottom: 2rem;
+}
 .modal__radio {
   display: inline-block;
   width: 30px;
@@ -1611,9 +1649,35 @@ body {
   position: relative;
   left: 30px;
 }
+.modal__form {
+  display: none;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  margin-bottom: 0;
+}
+.modal .modal__no-rew .block__spacer {
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+}
 
 .modal-active {
   border-color: hsl(176deg, 50%, 47%);
+}
+.modal-active .modal__form {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.modal-active .modal__form::before {
+  content: "";
+  top: 0;
+  height: 2px;
+  right: -2rem;
+  width: calc(100% + 4rem);
+  background-color: hsl(0deg, 0%, 90%);
+  position: absolute;
 }
 .modal-active .modal-rad {
   background-color: hsl(176deg, 50%, 47%);
