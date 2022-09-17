@@ -1581,6 +1581,17 @@ body.active::after {
   border-radius: 8px;
   margin-bottom: 2rem;
 }
+.modal__inner.active .modal-rad:after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: inherit;
+  background-color: hsl(176deg, 50%, 47%);
+}
+.modal__inner.active .modal__container-bottom {
+  display: grid;
+}
 .modal__container-top {
   padding: 2rem;
   width: 100%;
@@ -1613,14 +1624,6 @@ body.active::after {
           justify-content: center;
   cursor: pointer;
 }
-.modal__radio .modal-rad.active::after {
-  content: "";
-  position: absolute;
-  width: 14px;
-  height: 14px;
-  border-radius: inherit;
-  background-color: hsl(176deg, 50%, 47%);
-}
 .modal__head {
   grid-area: modal__heading;
 }
@@ -1648,7 +1651,7 @@ body.active::after {
   grid-template-columns: 0.5fr 1.5fr;
   grid-template-rows: 1fr;
   grid-template-areas: "modal__form-text modal__form-input-btn";
-  display: grid;
+  display: none;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1715,10 +1718,40 @@ body.active::after {
   padding: 0;
   width: initial;
 }
+.modal__no-reward .modal__form-container button {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.thanku {
+  position: absolute;
+  margin: 0 10vw;
+  text-align: center;
+}
+.thanku__img {
+  margin-bottom: 1rem;
+}
+.thanku .block__header {
+  margin-bottom: 1rem;
+}
+.thanku .block__btn {
+  height: 56px;
+  cursor: pointer;
+}
+.thanku.active {
+  display: initial;
+}
 
 @media screen and (max-width: 768px) {
   .hamburger {
     display: block;
+  }
+  .header {
+    background: url(../images/image-hero-mobile.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 60vh;
   }
   .header__nav {
     display: -webkit-box;
@@ -1766,13 +1799,6 @@ body.active::after {
     opacity: 1;
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
-  }
-  .header {
-    background: url(../images/image-hero-mobile.jpg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 60vh;
   }
   .block__bottom {
     gap: 0.5rem;
@@ -1837,6 +1863,9 @@ body.active::after {
   }
   .modal__count {
     justify-self: initial;
+  }
+  .thanku {
+    margin: 0 5%;
   }
 }
 @media screen and (max-width: 630px) {

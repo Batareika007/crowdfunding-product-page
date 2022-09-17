@@ -25,7 +25,7 @@
 </head>
 
 
-<body class="active">
+<body>
   <!-- header -->
   <header class="header">
     <div class="container">
@@ -201,7 +201,7 @@
 
     <!------------ modal window ------------------>
 
-    <section class="modal main__item block active">
+    <section class="modal main__item block">
       <!-- modal close img -->
       <div class="modal__close">
         <img src="images/icon-close-modal.svg" alt="close">
@@ -244,7 +244,17 @@
           </div>
 
         </div>
+
+        <div class="modal__container-bottom">
+
+          <from class="modal__form-container">
+
+            <button type="submit" class="block__btn">Continue</button>
+
+          </from>
+        </div>
       </div>
+
       <!-- Bamboo Stand 25-->
 
       <div class="modal__inner modal__bamboo">
@@ -280,6 +290,7 @@
             </div>
           </div>
         </div>
+
         <div class="modal__container-bottom">
 
           <!-- modal  form -->
@@ -289,22 +300,21 @@
 
           <!-- modal input and btn -->
 
-          <from class="modal__form-container">
+          <from class="modal__form-container" action="">
 
             <div class="modal__form-input">
-              <input class="input-number" type="number" id="price25" name="price25" min="25" value="25">
+              <input class="input-number" type="number" id="price25" name="bamboo" min="25" value="25">
             </div>
 
-            <button type="submit" class="block__btn">Continue</button>
+            <button class="block__btn">Continue</button>
 
           </from>
         </div>
       </div>
 
-
       <!-- Black Edition Stand 75 -->
 
-      <div class="modal__inner modal__Black">
+      <div class="modal__inner modal__black">
         <!-- grid container-->
         <div class="modal__container-top">
           <!-- radio btn -->
@@ -347,7 +357,7 @@
           <from class="modal__form-container">
 
             <div class="modal__form-input">
-              <input class="input-number" type="number" id="price75" name="price75" min="75" value="75">
+              <input class="input-number" type="number" id="price75" name="black" min="75" value="75">
             </div>
             <button type="submit" class="block__btn">Continue</button>
 
@@ -400,18 +410,29 @@
           <from class="modal__form-container">
 
             <div class="modal__form-input">
-              <input class="input-number" type="number" id="price200" name="price200" min="200" value="200">
+              <input class="input-number" type="number" id="price200" name="mahogany" min="200" value="200">
             </div>
             <button type="submit" class="block__btn">Continue</button>
 
           </from>
         </div>
       </div>
+
+
     </section>
 
+    <!-- Thanku modal -->
+
+    <div class="thanku main__item block modal" id="thanku">
+      <img class="thanku__img" src="images/icon-check.svg" alt="">
+      <h2 class="block__header">Thanks for your support!</h2>
+      <p class="block__text">Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser
+        worldwide. You will get an email once our campaign is completed.</p>
+      <button class="block__btn" id="thanku-btn">Got it!</button>
+    </div>
   </main>
 
-
+  <!-- Thanku modal -->
 
   <!-- footer -->
   <footer>

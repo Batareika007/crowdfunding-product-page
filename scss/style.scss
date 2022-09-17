@@ -254,7 +254,7 @@ body {
             border-radius: inherit;
             height: 10px;
             width: calc(100% - (100% - 89%));
-            background-color: hsl(176, 50%, 47%);
+            background-color: $cyanLight;
         }
     }
 
@@ -402,6 +402,21 @@ body {
         border: 1px solid $border;
         border-radius: 8px;
         margin-bottom: 2rem;
+
+        &.active {
+            .modal-rad:after {
+                content: '';
+                position: absolute;
+                width: 14px;
+                height: 14px;
+                border-radius: inherit;
+                background-color: $cyanLight;
+            }
+
+            .modal__container-bottom {
+                display: grid;
+            }
+        }
     }
 
     &__container-top {
@@ -431,18 +446,18 @@ body {
             justify-content: center;
             cursor: pointer;
 
-            &.active {
+            // &.active {
 
-                &::after {
-                    content: '';
-                    position: absolute;
-                    width: 14px;
-                    height: 14px;
-                    border-radius: inherit;
-                    background-color: $cyanLight;
-                }
+            //     &::after {
+            //         content: '';
+            //         position: absolute;
+            //         width: 14px;
+            //         height: 14px;
+            //         border-radius: inherit;
+            //         background-color: $cyanLight;
+            //     }
 
-            }
+            // }
         }
     }
 
@@ -482,8 +497,12 @@ body {
         grid-template-rows: 1fr;
         grid-template-areas:
             "modal__form-text modal__form-input-btn";
-        display: grid;
+        display: none;
         align-items: center;
+
+        // &.active {
+        //     display: grid;
+        // }
     }
 
     &__form-text {
@@ -546,6 +565,37 @@ body {
             width: initial;
         }
     }
+
+    &__no-reward {
+        .modal__form-container button {
+            flex-shrink: 0;
+        }
+    }
+}
+
+// Thanku modal
+
+.thanku {
+    position: absolute;
+    margin: 0 10vw;
+    text-align: center;
+
+    &__img {
+        margin-bottom: 1rem;
+    }
+
+    .block__header {
+        margin-bottom: 1rem;
+    }
+
+    .block__btn {
+        height: 56px;
+        cursor: pointer;
+    }
+
+    &.active {
+        display: initial;
+    }
 }
 
 // mobile 
@@ -556,6 +606,12 @@ body {
     }
 
     .header {
+        background: url(../images/image-hero-mobile.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 60vh;
+
         &__nav {
             display: flex;
             justify-content: space-between;
@@ -597,14 +653,6 @@ body {
             opacity: 1;
             transition: all 0.3s;
         }
-    }
-
-    .header {
-        background: url(../images/image-hero-mobile.jpg);
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        min-height: 60vh;
     }
 
     .block__bottom {
@@ -689,6 +737,10 @@ body {
             justify-self: initial;
         }
     }
+
+    .thanku {
+        margin: 0 5%;
+    }
 }
 
 @media screen and (max-width: 630px) {
@@ -734,7 +786,3 @@ body {
 
 
 }
-
-@media screen and (max-width:375px) {}
-
-@media screen and (max-width:320px) {}
