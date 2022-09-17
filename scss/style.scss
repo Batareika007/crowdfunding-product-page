@@ -475,26 +475,49 @@ body {
     }
 
     &__container-bottom {
+        font-weight: 700;
+        width: 100%;
         padding: 2rem;
         border-top: 1px solid $border;
         width: 100%;
-        display: grid;
         grid-template-columns: 0.5fr 1.5fr;
         grid-template-rows: 1fr;
         grid-template-areas:
             "modal__form-text modal__form-input-btn";
-        align-items: center;
-        display: none;
+        display: grid;
     }
 
     &__form-text {
+        width: 100%;
         grid-area: modal__form-text;
         color: $textColor;
+        text-align: center;
     }
 
-    &__form-input-btn {
+    &__form-input {
+        flex: 0 1 130px;
+        min-width: 100px;
+        position: relative;
+
+        &:before {
+            content: '$';
+            position: absolute;
+            color: $textColor;
+            display: flex;
+            height: 56px;
+            top: -2px;
+            left: 1rem;
+            align-items: center;
+        }
+    }
+
+    &__form-container {
+        position: relative;
         grid-area: modal__form-input-btn;
         justify-self: end;
+        display: flex;
+        justify-content: space-between;
+        gap: 2rem;
 
         input,
         button {
@@ -503,8 +526,8 @@ body {
         }
 
         input {
-            width: 130px;
-            padding: 0 1rem 0 2.5rem;
+            width: 100%;
+            padding: 0 1rem 0 2rem;
             border-radius: 56px;
             border: 1px solid $border;
             font-weight: 700;
@@ -519,13 +542,10 @@ body {
             }
         }
 
-        label {
-            position: relative;
-            left: 30px;
-        }
-
         button {
-            margin-left: 1rem;
+            flex: 0 1 130px;
+            padding: 0;
+            width: initial;
         }
     }
 }
@@ -636,7 +656,7 @@ body {
         }
 
         &__container-bottom {
-            display: grid;
+            padding: 5%;
             grid-template-columns: 1fr;
             grid-template-rows: 1fr 1fr;
             grid-template-areas:
@@ -649,8 +669,9 @@ body {
         }
 
         &__form-input-btn {
-            justify-self: center;
-
+            justify-content: center;
+            width: 100%;
+            gap: 1rem;
         }
 
         &__head {
@@ -680,14 +701,8 @@ body {
         &__container-bottom {
             grid-template-columns: auto;
             grid-template-rows: auto auto;
-            gap: 2rem;
+            gap: 2rem 0;
             text-align: center;
-        }
-
-        &__form-input-btn {
-            input {
-                margin-bottom: 1rem;
-            }
         }
     }
 }

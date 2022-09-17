@@ -1642,49 +1642,78 @@ body.active::after {
   margin-bottom: 0;
 }
 .modal__container-bottom {
+  font-weight: 700;
+  width: 100%;
   padding: 2rem;
   border-top: 1px solid hsl(0deg, 0%, 90%);
   width: 100%;
-  display: grid;
   grid-template-columns: 0.5fr 1.5fr;
   grid-template-rows: 1fr;
   grid-template-areas: "modal__form-text modal__form-input-btn";
+  display: grid;
+}
+.modal__form-text {
+  width: 100%;
+  grid-area: modal__form-text;
+  color: hsl(0deg, 0%, 48%);
+  text-align: center;
+}
+.modal__form-input {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 130px;
+          flex: 0 1 130px;
+  min-width: 100px;
+  position: relative;
+}
+.modal__form-input:before {
+  content: "$";
+  position: absolute;
+  color: hsl(0deg, 0%, 48%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 56px;
+  top: -2px;
+  left: 1rem;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  display: none;
 }
-.modal__form-text {
-  grid-area: modal__form-text;
-  color: hsl(0deg, 0%, 48%);
-}
-.modal__form-input-btn {
+.modal__form-container {
+  position: relative;
   grid-area: modal__form-input-btn;
   justify-self: end;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 2rem;
 }
-.modal__form-input-btn input,
-.modal__form-input-btn button {
+.modal__form-container input,
+.modal__form-container button {
   height: 56px;
 }
-.modal__form-input-btn input {
-  width: 130px;
-  padding: 0 1rem 0 2.5rem;
+.modal__form-container input {
+  width: 100%;
+  padding: 0 1rem 0 2rem;
   border-radius: 56px;
   border: 1px solid hsl(0deg, 0%, 90%);
   font-weight: 700;
   font-size: 1rem;
   cursor: pointer;
 }
-.modal__form-input-btn input:focus, .modal__form-input-btn input:active, .modal__form-input-btn input:hover {
+.modal__form-container input:focus, .modal__form-container input:active, .modal__form-container input:hover {
   border-color: hsl(176deg, 50%, 47%);
   outline: hsl(176deg, 50%, 47%);
 }
-.modal__form-input-btn label {
-  position: relative;
-  left: 30px;
-}
-.modal__form-input-btn button {
-  margin-left: 1rem;
+.modal__form-container button {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 130px;
+          flex: 0 1 130px;
+  padding: 0;
+  width: initial;
 }
 
 @media screen and (max-width: 768px) {
@@ -1784,7 +1813,7 @@ body.active::after {
     grid-template-areas: "modal__radio modal__heading" "modal__text modal__text" "modal__count modal__count";
   }
   .modal__container-bottom {
-    display: grid;
+    padding: 5%;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
     grid-template-areas: "modal__form-text" "modal__form-input-btn";
@@ -1793,7 +1822,11 @@ body.active::after {
     justify-self: center;
   }
   .modal__form-input-btn {
-    justify-self: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 100%;
+    gap: 1rem;
   }
   .modal__head_item, .modal__head_price {
     display: block;
@@ -1812,11 +1845,8 @@ body.active::after {
   .modal__container-bottom {
     grid-template-columns: auto;
     grid-template-rows: auto auto;
-    gap: 2rem;
+    gap: 2rem 0;
     text-align: center;
-  }
-  .modal__form-input-btn input {
-    margin-bottom: 1rem;
   }
 }
 @media screen and (max-width: 425px) {
