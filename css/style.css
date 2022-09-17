@@ -1643,20 +1643,20 @@ body.active::after {
 }
 .modal__container-bottom {
   font-weight: 700;
-  width: 100%;
   padding: 2rem;
   border-top: 1px solid hsl(0deg, 0%, 90%);
-  width: 100%;
   grid-template-columns: 0.5fr 1.5fr;
   grid-template-rows: 1fr;
   grid-template-areas: "modal__form-text modal__form-input-btn";
   display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .modal__form-text {
   width: 100%;
   grid-area: modal__form-text;
   color: hsl(0deg, 0%, 48%);
-  text-align: center;
 }
 .modal__form-input {
   -webkit-box-flex: 0;
@@ -1686,10 +1686,10 @@ body.active::after {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  gap: 2rem;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  gap: 1rem;
 }
 .modal__form-container input,
 .modal__form-container button {
@@ -1819,9 +1819,10 @@ body.active::after {
     grid-template-areas: "modal__form-text" "modal__form-input-btn";
   }
   .modal__form-text {
+    text-align: center;
     justify-self: center;
   }
-  .modal__form-input-btn {
+  .modal__form-container {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;

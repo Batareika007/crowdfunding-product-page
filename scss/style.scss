@@ -476,22 +476,20 @@ body {
 
     &__container-bottom {
         font-weight: 700;
-        width: 100%;
         padding: 2rem;
         border-top: 1px solid $border;
-        width: 100%;
         grid-template-columns: 0.5fr 1.5fr;
         grid-template-rows: 1fr;
         grid-template-areas:
             "modal__form-text modal__form-input-btn";
         display: grid;
+        align-items: center;
     }
 
     &__form-text {
         width: 100%;
         grid-area: modal__form-text;
         color: $textColor;
-        text-align: center;
     }
 
     &__form-input {
@@ -516,8 +514,8 @@ body {
         grid-area: modal__form-input-btn;
         justify-self: end;
         display: flex;
-        justify-content: space-between;
-        gap: 2rem;
+        justify-content: flex-end;
+        gap: 1rem;
 
         input,
         button {
@@ -665,10 +663,11 @@ body {
         }
 
         &__form-text {
+            text-align: center;
             justify-self: center;
         }
 
-        &__form-input-btn {
+        &__form-container {
             justify-content: center;
             width: 100%;
             gap: 1rem;
