@@ -100,6 +100,7 @@ body {
     background-color: hsl(0, 0%, 95%);
 
     &.active {
+        overflow: hidden;
 
         &::after {
             position: absolute;
@@ -357,11 +358,18 @@ body {
 
 .modal {
     display: none;
-    margin: 0 5%;
-    left: 0;
+    // margin: 0 5%;
+    // left: 0;
     z-index: 30;
-    position: absolute;
-    top: -40vh;
+    // position: absolute;
+    // top: -40vh;
+    // ----  test position ----
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    height: 90%;
+    transform: translate(-50%, -50%);
+    overflow-y: auto;
 
     &.active {
         display: grid;

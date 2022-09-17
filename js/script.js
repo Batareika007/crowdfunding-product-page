@@ -48,10 +48,12 @@ document.querySelector('.modal__close img').addEventListener('click', () => {
 
 // open empty modal
 const openModal = document.getElementById('openModal');
-
-openModal.addEventListener('click', () => {
+const openModalFn = () => {
     document.querySelector('.modal').classList.add('active');
     document.querySelector('body').classList.add('active');
+}
+openModal.addEventListener('click', () => {
+    openModalFn()
 })
 
 
@@ -77,4 +79,13 @@ allModals.forEach((e) => {
             openModalForm(modalBlack)
         }
     })
+})
+
+document.getElementById('bamboo-btn').addEventListener('click', () => {
+    openModalFn()
+    openModalForm(modalBamboo)
+})
+document.getElementById('black-btn').addEventListener('click', () => {
+    openModalFn()
+    openModalForm(modalBlack)
 })

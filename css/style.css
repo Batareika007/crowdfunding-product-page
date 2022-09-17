@@ -1302,6 +1302,9 @@ body {
   font-size: 100%;
   background-color: hsl(0deg, 0%, 95%);
 }
+body.active {
+  overflow: hidden;
+}
 body.active::after {
   position: absolute;
   content: "";
@@ -1545,11 +1548,14 @@ body.active::after {
 
 .modal {
   display: none;
-  margin: 0 5%;
-  left: 0;
   z-index: 30;
-  position: absolute;
-  top: -40vh;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  height: 90%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  overflow-y: auto;
 }
 .modal.active {
   display: grid;
