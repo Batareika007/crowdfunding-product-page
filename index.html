@@ -25,7 +25,7 @@
 </head>
 
 
-<body class="active">
+<body>
   <!-- header -->
   <header class="header">
     <div class="container">
@@ -77,15 +77,14 @@
       <div class="block__numbers number">
 
         <div class="number__item">
-          <div class="block__header number__target">89,914
-          </div>
+          <div class="block__header number__target">89,914</div>
           <div class="block__text">
             of $100,000 backed
           </div>
         </div>
 
         <div class="number__item">
-          <div class="block__header">
+          <div class="block__header backers">
             5,007
           </div>
           <div class="block__text">
@@ -141,7 +140,7 @@
 
         <div class="block__spacer">
           <div class="block__count count">
-            <span class="count__number">101</span>
+            <span class="count__number bamboo-stand-count">101</span>
             <span class="count__regular">left</span>
           </div>
           <button class="block__btn" id="bamboo-btn" for="bamboo-modal"><a href="#bamboo-modal">Select
@@ -168,7 +167,7 @@
 
         <div class="block__spacer">
           <div class="block__count count">
-            <span class="count__number">64</span>
+            <span class="count__number black-edition-count">64</span>
             <span class="count__regular">left</span>
           </div>
           <button class="block__btn" id="black-btn"><a href="#black-modal">Select Reward</a></button>
@@ -205,7 +204,7 @@
 
     <!------------ modal window ------------------>
 
-    <section class="modal main__item block hide-scroll">
+    <section class="modal main__item block hide-scroll ">
       <!-- modal close img -->
       <div class="modal__close">
         <img src="images/icon-close-modal.svg" alt="close">
@@ -250,12 +249,12 @@
         </div>
 
         <div class="modal__container-bottom">
+          <!------------ form free ----------->
+          <form class="modal__form-container">
+            <button type="submit" class="block__btn" id="priceFree-btn" name="free" value="no reward">Continue</button>
+          </form>
 
-          <from class="modal__form-container">
 
-            <button type="submit" class="block__btn">Continue</button>
-
-          </from>
         </div>
       </div>
 
@@ -289,7 +288,7 @@
           <!-- modal count -->
           <div class="modal__count">
             <div class="count modal__count_item">
-              <span class="count__number"><b>101</b></span>
+              <span class="count__number bamboo-stand-count">101</span>
               <span class="count__regular">left</span>
             </div>
           </div>
@@ -303,16 +302,15 @@
           </div>
 
           <!-- modal input and btn -->
+          <!----- form 25 -->
 
-          <from class="modal__form-container" action="">
-
+          <form class="modal__form-container">
             <div class="modal__form-input">
               <input class="input-number" type="number" id="price25" name="bamboo" min="25" value="25">
             </div>
 
-            <button class="block__btn">Continue</button>
-
-          </from>
+            <button type="submit" class="block__btn" id="price25-btn">Continue</button>
+          </form>
         </div>
       </div>
 
@@ -346,7 +344,7 @@
           <!-- modal count -->
           <div class="modal__count">
             <div class="count modal__count_item">
-              <span class="count__number"><b>64</b></span>
+              <span class="count__number black-edition-count">64</span>
               <span class="count__regular">left</span>
             </div>
           </div>
@@ -358,14 +356,13 @@
             <p class="modal__text">Enter your pledge</p>
           </div>
           <!-- modal input and btn -->
-          <from class="modal__form-container">
-
+          <!------ form 75  -->
+          <form class="modal__form-container">
             <div class="modal__form-input">
               <input class="input-number" type="number" id="price75" name="black" min="75" value="75">
             </div>
-            <button type="submit" class="block__btn">Continue</button>
-
-          </from>
+            <button type="submit" class="block__btn" id="price75-btn">Continue</button>
+          </form>
         </div>
       </div>
 
@@ -399,7 +396,7 @@
           <!-- modal count -->
           <div class="modal__count">
             <div class="count modal__count_item">
-              <span class="count__number"><b>0</b></span>
+              <span class="count__number">0</span>
               <span class="count__regular">left</span>
             </div>
           </div>
@@ -411,14 +408,14 @@
             <p class="modal__text">Enter your pledge</p>
           </div>
           <!-- modal input and btn -->
-          <from class="modal__form-container">
+          <form class="modal__form-container">
 
             <div class="modal__form-input">
               <input class="input-number" type="number" id="price200" name="mahogany" min="200" value="200">
             </div>
             <button type="submit" class="block__btn">Continue</button>
 
-          </from>
+          </form>
         </div>
       </div>
 
@@ -427,7 +424,7 @@
 
     <!-- Thanku modal -->
 
-    <div class="thanku main__item block modal active" id="thanku">
+    <div class="thanku main__item block modal" id="thanku">
       <img class="thanku__img" src="images/icon-check.svg" alt="">
       <h2 class="block__header">Thanks for your support!</h2>
       <p class="block__text">Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser

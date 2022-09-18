@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap');
 @import "colors";
 @import "../node_modules/hamburgers/_sass/hamburgers/hamburgers";
 
@@ -121,7 +121,9 @@ body {
     padding: 0 5%;
 }
 
-
+.count__number{
+    font-weight: 600;
+}
 .header {
     position: relative;
     background: url(../images/image-hero-desktop.jpg);
@@ -606,6 +608,7 @@ body {
         display: initial;
     }
 }
+
 
 // mobile 
 
