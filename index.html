@@ -25,7 +25,7 @@
 </head>
 
 
-<body>
+<body class="active">
   <!-- header -->
   <header class="header">
     <div class="container">
@@ -144,7 +144,8 @@
             <span class="count__number">101</span>
             <span class="count__regular">left</span>
           </div>
-          <button class="block__btn" id="bamboo-btn">Select Reward</button>
+          <button class="block__btn" id="bamboo-btn" for="bamboo-modal"><a href="#bamboo-modal">Select
+              Reward</a></button>
         </div>
 
       </div>
@@ -170,7 +171,7 @@
             <span class="count__number">64</span>
             <span class="count__regular">left</span>
           </div>
-          <button class="block__btn" id="black-btn">Select Reward</button>
+          <button class="block__btn" id="black-btn"><a href="#black-modal">Select Reward</a></button>
         </div>
 
       </div>
@@ -204,7 +205,7 @@
 
     <!------------ modal window ------------------>
 
-    <section class="modal main__item block">
+    <section class="modal main__item block hide-scroll">
       <!-- modal close img -->
       <div class="modal__close">
         <img src="images/icon-close-modal.svg" alt="close">
@@ -260,7 +261,7 @@
 
       <!-- Bamboo Stand 25-->
 
-      <div class="modal__inner modal__bamboo">
+      <div class="modal__inner modal__bamboo" id="bamboo-modal">
         <!-- grid container-->
         <div class="modal__container-top">
           <!-- radio btn -->
@@ -317,7 +318,7 @@
 
       <!-- Black Edition Stand 75 -->
 
-      <div class="modal__inner modal__black">
+      <div class="modal__inner modal__black" id="black-modal">
         <!-- grid container-->
         <div class="modal__container-top">
           <!-- radio btn -->
@@ -426,7 +427,7 @@
 
     <!-- Thanku modal -->
 
-    <div class="thanku main__item block modal" id="thanku">
+    <div class="thanku main__item block modal active" id="thanku">
       <img class="thanku__img" src="images/icon-check.svg" alt="">
       <h2 class="block__header">Thanks for your support!</h2>
       <p class="block__text">Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser

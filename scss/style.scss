@@ -355,19 +355,14 @@ body {
 }
 
 // modal section 
-
 .modal {
     display: none;
-    // margin: 0 5%;
-    // left: 0;
+    width: 810px;
     z-index: 30;
-    // position: absolute;
-    // top: -40vh;
-    // ----  test position ----
     position: fixed;
     top: 50%;
     left: 50%;
-    height: 90%;
+    height: 90vh;
     transform: translate(-50%, -50%);
     overflow-y: auto;
 
@@ -409,9 +404,14 @@ body {
     &__inner {
         border: 1px solid $border;
         border-radius: 8px;
-        margin-bottom: 2rem;
+
+        &:not(:last-child) {
+            margin-bottom: 2rem;
+        }
 
         &.active {
+            border-color: $cyanLight;
+
             .modal-rad:after {
                 content: '';
                 position: absolute;
@@ -584,9 +584,10 @@ body {
 // Thanku modal
 
 .thanku {
-    position: absolute;
-    margin: 0 10vw;
     text-align: center;
+    height: auto;
+    padding: 2rem;
+    width: 600px;
 
     &__img {
         margin-bottom: 1rem;
@@ -700,6 +701,8 @@ body {
     }
 
     .modal {
+        width: 90vw;
+
         &__container-top {
             grid-template-columns: 0.1fr 1.9fr;
             grid-template-rows: auto auto;
@@ -745,10 +748,6 @@ body {
             justify-self: initial;
         }
     }
-
-    .thanku {
-        margin: 0 5%;
-    }
 }
 
 @media screen and (max-width: 630px) {
@@ -792,5 +791,7 @@ body {
 
     }
 
-
+    .thanku {
+        padding: 2rem 1rem;
+    }
 }

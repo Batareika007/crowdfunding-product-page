@@ -1548,11 +1548,12 @@ body.active::after {
 
 .modal {
   display: none;
+  width: 810px;
   z-index: 30;
   position: fixed;
   top: 50%;
   left: 50%;
-  height: 90%;
+  height: 90vh;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   overflow-y: auto;
@@ -1585,7 +1586,12 @@ body.active::after {
 .modal__inner {
   border: 1px solid hsl(0deg, 0%, 90%);
   border-radius: 8px;
+}
+.modal__inner:not(:last-child) {
   margin-bottom: 2rem;
+}
+.modal__inner.active {
+  border-color: hsl(176deg, 50%, 47%);
 }
 .modal__inner.active .modal-rad:after {
   content: "";
@@ -1730,9 +1736,10 @@ body.active::after {
 }
 
 .thanku {
-  position: absolute;
-  margin: 0 10vw;
   text-align: center;
+  height: auto;
+  padding: 2rem;
+  width: 600px;
 }
 .thanku__img {
   margin-bottom: 1rem;
@@ -1839,6 +1846,9 @@ body.active::after {
     width: 40%;
     background-color: hsl(0deg, 0%, 90%);
   }
+  .modal {
+    width: 90vw;
+  }
   .modal__container-top {
     grid-template-columns: 0.1fr 1.9fr;
     grid-template-rows: auto auto;
@@ -1870,9 +1880,6 @@ body.active::after {
   .modal__count {
     justify-self: initial;
   }
-  .thanku {
-    margin: 0 5%;
-  }
 }
 @media screen and (max-width: 630px) {
   .block__count {
@@ -1902,5 +1909,8 @@ body.active::after {
   }
   .block__btn2 .button-text {
     display: none;
+  }
+  .thanku {
+    padding: 2rem 1rem;
   }
 }
