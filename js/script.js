@@ -21,8 +21,16 @@ const thankuModalBtn = document.getElementById('thanku-btn');
 // counts 
 const bambooStandCount = document.querySelectorAll('.bamboo-stand-count');
 const blackEditionCount = document.querySelectorAll('.black-edition-count');
-const totalCout = document.querySelector('.number__target')
+const totalCout = document.querySelector('.number__target');
 const totalBacker = document.querySelector('.backers')
+
+// change style of range
+const range = document.querySelector('.block__range_active')
+let updateRange = () => {
+    let changeRange = totalCout.innerHTML.replace(',', '.');
+    range.style.width = `calc(100% - (100% - ${changeRange}%))`
+}
+
 
 // remove black Body Cover
 const removeBodyBlack = () => {
@@ -173,6 +181,7 @@ const addToTotalCount = (count) => {
     n = parseInt(n, 10);
     n += Number(count);
     totalCout.innerHTML = n.toLocaleString("en-US");
+    updateRange();
 }
 
 // subtraction count 

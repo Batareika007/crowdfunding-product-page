@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap");
 /*!
  * Hamburgers
  * @description Tasty CSS-animated hamburgers
@@ -1687,15 +1688,8 @@ body.active::after {
   content: "$";
   position: absolute;
   color: hsl(0deg, 0%, 48%);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 56px;
-  top: -2px;
+  top: 31%;
   left: 1rem;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 .modal__form-container {
   position: relative;
