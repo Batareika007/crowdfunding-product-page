@@ -1,9 +1,3 @@
-// let n = 234234234;
-// let str = n.toLocaleString("en-US");
-// console.log(str); // "234,234,234"
-
-
-
 const hamburger = document.querySelector('.hamburger');
 const navList = document.querySelector('.nav-list');
 const bookmarkBtn = document.querySelector('.block__btn2');
