@@ -279,17 +279,20 @@ body {
         flex-wrap: wrap;
         margin-bottom: 1rem;
 
-        .block__header {
-            flex: 1 0 60%;
-        }
-
+        .block__header,
         .block__count {
             flex: 1 0 60%;
-            // margin-bottom: 1rem;
         }
 
         .block__btn {
             min-height: 56px;
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+
+            &:hover {
+                color: white;
+            }
         }
     }
 

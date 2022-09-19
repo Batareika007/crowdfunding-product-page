@@ -1479,11 +1479,7 @@ body.active::after {
       flex-wrap: wrap;
   margin-bottom: 1rem;
 }
-.block__spacer .block__header {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0 60%;
-          flex: 1 0 60%;
-}
+.block__spacer .block__header,
 .block__spacer .block__count {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 60%;
@@ -1491,6 +1487,16 @@ body.active::after {
 }
 .block__spacer .block__btn {
   min-height: 56px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: 500;
+}
+.block__spacer .block__btn:hover {
+  color: white;
 }
 .block__price {
   color: hsl(176deg, 50%, 47%);
